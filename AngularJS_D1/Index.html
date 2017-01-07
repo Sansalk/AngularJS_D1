@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule",[]>
+
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="Script.js"></script>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        10+10={{10+10}}
+    </div>
+    <div ng-controller="myController">
+        <div> Tu 3</div>
+        <div>
+            First Name:{{employee.firstname}}
+        </div>
+        <div>
+            First Name:{{employee.lastname}}
+        </div>
+        <div>
+            First Name:{{employee.gender}}
+        </div>
+    </div>
+
+    <div ng-controller="myPlanController">
+        <div> Tu 4</div>
+        <div>
+             Name:{{PlanObject.name}}
+        </div>
+        <div>
+            Destination:{{PlanObject.Destination}}
+        </div>
+        <div>
+            <img ng-src="{{PlanObject.Plan}}"
+                    alt="{{ PlanObject.name + ' Plan' }}"
+                 style="height:100px;width:200px" />
+        </div>
+       
+    </div>
+
+    <div ng-controller="myStudentController">
+       <div> Tu 5</div>
+
+     <div>
+         <input type="text" placeholder="Lastname" ng-model="StudentObject.SfirstName" /> 
+     </div>
+      <div>
+          Student Name :{{StudentObject.SfirstName}}
+     </div>
+    </div>
+
+
+    <div ng-controller="myCountriesController">
+        <div> Tu 6</div>
+        <div>{{CountryObject.City}}</div>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Country</th>
+                      <th>County</th>
+                      <th>City</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="CountryEl in CountryObject">
+                      <td>{{CountryEl.CountryName}}</td>
+                      <td>{{CountryEl.County}}</td>
+                      <td>{{CountryEl.City}}</td>
+                  </tr>
+              </tbody>
+          </table>
+    </div>
+
+
+
+    <div ng-controller="myTechnoController">
+        <div> Tu 2</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="technology in technologies">
+                    <td> {{ technology.name }} </td>
+                    <td style="text-align:center"> {{ technology.likes }} </td>
+                    <td style="text-align:center"> {{ technology.dislikes }} </td>
+                    <td>
+                        <input type="button" ng-click="incrementLikes(technology)" value="Like" />
+                        <input type="button" ng-click="incrementDislikes(technology)" value="Dislike" />
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+
+</body>
+</html>
